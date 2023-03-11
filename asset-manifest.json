@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/characters/static/css/main.7acaea2f.css",
-    "main.js": "/characters/static/js/main.07d3183d.js",
+    "main.css": "/characters/static/css/main.9f842b21.css",
+    "main.js": "/characters/static/js/main.b8d350a6.js",
+    "static/js/999.4fa1b4c6.chunk.js": "/characters/static/js/999.4fa1b4c6.chunk.js",
+    "static/js/661.87c69e01.chunk.js": "/characters/static/js/661.87c69e01.chunk.js",
+    "static/media/rick&morty_mob.png": "/characters/static/media/rick&morty_mob.0a2edcae324f9f90e33a.png",
     "index.html": "/characters/index.html",
-    "main.7acaea2f.css.map": "/characters/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/characters/static/js/main.07d3183d.js.map"
+    "main.9f842b21.css.map": "/characters/static/css/main.9f842b21.css.map",
+    "main.b8d350a6.js.map": "/characters/static/js/main.b8d350a6.js.map",
+    "999.4fa1b4c6.chunk.js.map": "/characters/static/js/999.4fa1b4c6.chunk.js.map",
+    "661.87c69e01.chunk.js.map": "/characters/static/js/661.87c69e01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.9f842b21.css",
+    "static/js/main.b8d350a6.js"
   ]
 }
