@@ -40,10 +40,11 @@ const Home = () => {
       {isLoading && <Loader />} 
 
       <CharatersList>
-        {charaters.map(({ id, name, species }) => (
+        {charaters.map(({ id, image, name, species }) => (
           <CharatersItem 
             key={id}
             id={id}
+            image={image}
             name={name} 
             species={species}
           />
