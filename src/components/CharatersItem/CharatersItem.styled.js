@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const CharatersCard = styled.li`
-    width: 312px;
     height: 308px;
-    border-radius: 4px;
+    border-radius: ${p => p.theme.radii.normal};
     overflow: hidden;
     box-shadow: ${p => p.theme.shadow};
     
@@ -12,12 +11,12 @@ export const CharatersCard = styled.li`
 
     &:hover,
     &:focus{
-        transform: scale(1.03);
+        transform: scale(1.05);
     };
 `;
 
 export const CharatersImg = styled.img`
-  width: 100%;
+  /* width: 100%; */
   height: 232px;
   object-fit: cover;
 `;

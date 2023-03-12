@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${p => p.theme.fontSizes.xs};
     font-weight: ${p => p.theme.fontWeights.normal};
     line-height: 1.5;
+
+    background-color: ${p => p.theme.colors.white};
   }
   
   h1,h2,h3,h4,h5,h6,p {

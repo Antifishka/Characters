@@ -1,30 +1,36 @@
 import styled from "styled-components";
 
-export const FieldFilter = styled.label`
+export const Container = styled.div`
     position: relative;
+    padding-top: 32px;
+    margin-bottom: 32px;
+    color: ${p => p.theme.colors.placeholder};
+`;
+
+export const FieldFilter = styled.label`
     width: 100%;
 `;
 
 export const InputFilter = styled.input`
-    margin-top: ${p => p.theme.space[2]}px; 
-    padding-top: ${p => p.theme.space[3]}px;
-    padding-bottom: ${p => p.theme.space[3]}px;
-    padding-left: 27px;
-    padding-right: ${p => p.theme.space[3]}px;
+    padding: 16px 16px 16px 48px;
     width: 100%;
     font: inherit;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: ${p => p.theme.radii.normal};
+    border: ${p => p.theme.borders.normal};
+    border-radius: ${p => p.theme.radii.filter};
+    outline: none;
+    font-size: ${p => p.theme.fontSizes.s};
     
+    color: ${p => p.theme.colors.mainText};
     background-color: inherit;
-    transition: ${p => p.theme.transition.main};
+    
     ::placeholder {
         font-size: ${p => p.theme.fontSizes.s};
+        color: ${p => p.theme.colors.placeholder};
     }
 `;
 
 export const IconForm = styled.div`
     position: absolute;
-    top: 15px;
-    left: ${p => p.theme.space[3]}px;
+    bottom: 14px;
+    left: 18px;
 `;

@@ -10,11 +10,11 @@ export const Layout = () => {
     <Container>
       <Header>
         <div>
-            <img srcSet={imgMob}
-                alt="rick&morty_logo"
-                width="312px"
-                height="104px"
-                loading="lazy" />
+          <img srcSet={imgMob}
+            alt="rick&morty_logo"
+            width="312px"
+            height="104px"
+            loading="lazy" />
         </div>
       </Header>
       

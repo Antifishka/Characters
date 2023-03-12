@@ -3,13 +3,14 @@ import API from 'services/api';
 import { Helmet } from 'react-helmet';
 import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
-// import { BASE_IMAGE_URL, PlACEHOLDER_IMAGE_URL } from 'constants/constants';
 import { CharatersList } from "./Home.styled";
 import { CharatersItem } from "components/CharatersItem/CharatersItem";
+import { getVisibleContacts } from "helpers/getVisibleContacts";
 
 const Home = () => {
   const [charaters, setCharaters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [filter, setFilter] = useState('')
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,18 +30,24 @@ const Home = () => {
     };
   }, []);
 
+  const changeFilter = (e) => {
+    setFilter(e.currentTarget.value);
+  };
+
+  const visibleCharaters = getVisibleContacts(charaters, filter);
+
   return (
     <main>
       <Helmet>
         <title>Home</title>
       </Helmet>
 
-      <Filter />
+      <Filter filter={filter} onChange={changeFilter} />
 
       {isLoading && <Loader />} 
 
       <CharatersList>
-        {charaters.map(({ id, image, name, species }) => (
+        {visibleCharaters.map(({ id, image, name, species }) => (
           <CharatersItem 
             key={id}
             id={id}

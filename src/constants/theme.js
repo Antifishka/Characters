@@ -4,12 +4,12 @@ export const theme = {
     colors: {
         mainText: 'rgba(0, 0, 0, 0.87)',
         secondaryText: 'rgba(0, 0, 0, 0.6)',
+        placeholder: 'rgba(0, 0, 0, 0.5);',
         background: '#e2e5e8',
         white: '#fff',
         accent: '#2063e4',
         error: 'red',
     },
-    space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fonts: {
         roboto: "'Roboto', sans-serif",
     },
@@ -36,14 +36,12 @@ export const theme = {
         maxWidth: '768px',
     },
     borders: {
-        none: 'none',
-        normal: '1px solid #2f2f37',
-        button: '1px solid #c9c5c5',
+        normal: '1px solid rgba(0, 0, 0, 0.5)',
     },
     radii: {
         none: '0',
         normal: '4px',
-        box: '8px',
+        filter: '8px',
         round: '50%',
     },
     shadow: '0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14)',
