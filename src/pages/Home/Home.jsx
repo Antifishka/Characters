@@ -6,6 +6,7 @@ import { Loader } from "components/Loader/Loader";
 import { CharatersList } from "./Home.styled";
 import { CharatersItem } from "components/CharatersItem/CharatersItem";
 import { getVisibleContacts } from "helpers/getVisibleContacts";
+import { Title } from "components/Title/Title";
 
 const Home = () => {
   const [charaters, setCharaters] = useState([]);
@@ -41,6 +42,8 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
+
+      <Title />
 
       <Filter filter={filter} onChange={changeFilter} />
 

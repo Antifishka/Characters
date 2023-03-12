@@ -4,14 +4,15 @@ export const theme = {
     colors: {
         mainText: 'rgba(0, 0, 0, 0.87)',
         secondaryText: 'rgba(0, 0, 0, 0.6)',
+        accent: '#09b294',
         placeholder: 'rgba(0, 0, 0, 0.5);',
         background: '#e2e5e8',
         white: '#fff',
-        accent: '#2063e4',
-        error: 'red',
+        black: '#000',
     },
     fonts: {
         roboto: "'Roboto', sans-serif",
+        karla: "'Karla', sans-serif",
     },
     fontSizes: {
         xs: '14px',

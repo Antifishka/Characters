@@ -13,5 +13,5 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  padding-top: 92px;
+  /* padding-top: 92px; */
 `;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     position: relative;
-    padding-top: 32px;
     margin-bottom: 32px;
     color: ${p => p.theme.colors.placeholder};
 `;

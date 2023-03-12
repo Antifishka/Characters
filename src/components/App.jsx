@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Layout } from "./Layout/Layout";
 
 const Home = lazy(() => import('../pages/Home/Home'));
-// const CharacterDetails = lazy(() => import('../pages/CharacterDetails/CharacterDetails'));
+const CharacterDetails = lazy(() => import('../pages/CharacterDetails/CharacterDetails'));
 
 export const App = () => {
   return (  
@@ -14,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="/:characterId" element={<CharacterDetails />} /> */}
+          <Route path="/:characterId" element={<CharacterDetails />} />
           <Route path="*" element={<Home />} />
         </Route>  
       </Routes>
