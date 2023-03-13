@@ -5,6 +5,8 @@ export const theme = {
         mainText: 'rgba(0, 0, 0, 0.87)',
         secondaryText: 'rgba(0, 0, 0, 0.6)',
         accent: '#09b294',
+        mainTextDetails: '#081F32',
+        secondaryTextDetails: '#6E798C',
         placeholder: 'rgba(0, 0, 0, 0.5);',
         background: '#e2e5e8',
         white: '#fff',
@@ -37,7 +39,8 @@ export const theme = {
         maxWidth: '768px',
     },
     borders: {
-        normal: '1px solid rgba(0, 0, 0, 0.5)',
+        input: '1px solid rgba(0, 0, 0, 0.5)',
+        normal: '1px solid rgba(33, 33, 33, 0.08)',
     },
     radii: {
         none: '0',

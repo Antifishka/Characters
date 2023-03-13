@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CharatersCard = styled.li`
+export const CharactersCard = styled.li`
     height: 308px;
     border-radius: ${p => p.theme.radii.normal};
     overflow: hidden;
@@ -15,23 +15,23 @@ export const CharatersCard = styled.li`
     };
 `;
 
-export const CharatersImg = styled.img`
+export const CharactersImg = styled.img`
   /* width: 100%; */
   height: 232px;
   object-fit: cover;
 `;
 
-export const CharatersInfo = styled.div`
+export const CharactersInfo = styled.div`
   padding: 12px 16px;
 `;
 
-export const CharatersTitle = styled.h3`
+export const CharactersTitle = styled.h3`
   font-size: ${p => p.theme.fontSizes.l};
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.5;
   letter-spacing: 0.15px;
 `;
 
-export const CharatersText = styled.p`
+export const CharactersText = styled.p`
   letter-spacing: 0.15px;
 `;

@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { BsArrowLeft } from "react-icons/bs";
+import { MdArrowBack} from "react-icons/md";
 import { StyledLink } from "./BackButton.styled";
 
 export const BackButton = ({ children }) => {
@@ -8,7 +8,7 @@ export const BackButton = ({ children }) => {
     console.log(backLinkHref);
 
     return <StyledLink to={backLinkHref}>
-        <BsArrowLeft size={16} />
+        <MdArrowBack size={26} />
         {children}
     </StyledLink>
 };

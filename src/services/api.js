@@ -23,7 +23,7 @@ async function fetchCharaters() {
 
 async function fetchCharaterById(id) {
     const { data } = await apiInstance.get(`/${id}`);
-    console.log(data);
+    
     return data;
 }
 

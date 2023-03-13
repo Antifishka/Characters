@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
 import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
-import { CharatersList } from "./Home.styled";
-import { CharatersItem } from "components/CharatersItem/CharatersItem";
-import { getVisibleContacts } from "helpers/getVisibleContacts";
+import { CharactersList } from "./Home.styled";
+import { CharactersItem } from "components/CharactersItem/CharactersItem";
 import { Title } from "components/Title/Title";
 
 const Home = () => {
-  const [charaters, setCharaters] = useState([]);
+  const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useState('')
 
@@ -19,9 +18,9 @@ const Home = () => {
 
     async function getCharaters() {
       try {
-        const fetchCharaters = await API.fetchCharaters();
-        console.log(fetchCharaters);
-        setCharaters(fetchCharaters);
+        const fetchCharacters = await API.fetchCharaters();
+        console.log(fetchCharacters);
+        setCharacters(fetchCharacters);
 
       } catch (error) {
         console.log(error);
@@ -35,7 +34,17 @@ const Home = () => {
     setFilter(e.currentTarget.value);
   };
 
-  const visibleCharaters = getVisibleContacts(charaters, filter);
+  const sortedCharacters = [...characters].sort((first, second) =>
+    first.name.localeCompare(second.name));
+
+  const visibleCharacters = useMemo(() => {
+    console.log("Not memoized!");
+    const normalizedFilter = filter.toLowerCase();
+
+    return sortedCharacters.filter(({ name }) =>
+      name.toLowerCase().includes(normalizedFilter)
+    );
+  }, [filter, sortedCharacters]);
 
   return (
     <main>
@@ -49,9 +58,9 @@ const Home = () => {
 
       {isLoading && <Loader />} 
 
-      <CharatersList>
-        {visibleCharaters.map(({ id, image, name, species }) => (
-          <CharatersItem 
+      <CharactersList>
+        {visibleCharacters.map(({ id, image, name, species }) => (
+          <CharactersItem 
             key={id}
             id={id}
             image={image}
@@ -59,7 +68,7 @@ const Home = () => {
             species={species}
           />
         ))}
-      </CharatersList>
+      </CharactersList>
     </main>
   );
 };

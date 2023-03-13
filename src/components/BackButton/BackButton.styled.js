@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const StyledLink = styled(Link)`
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   padding-top: 23px;
   margin-bottom: 77px;
 

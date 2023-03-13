@@ -14,7 +14,7 @@ export const InputFilter = styled.input`
     padding: 16px 16px 16px 48px;
     width: 100%;
     font: inherit;
-    border: ${p => p.theme.borders.normal};
+    border: ${p => p.theme.borders.input};
     border-radius: ${p => p.theme.radii.filter};
     outline: none;
     font-size: ${p => p.theme.fontSizes.s};

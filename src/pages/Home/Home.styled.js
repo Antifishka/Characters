@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "constants/theme";
 
-export const CharatersList = styled.ul`
+export const CharactersList = styled.ul`
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

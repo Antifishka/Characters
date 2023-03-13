@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Layout } from "./Layout/Layout";
 
 const Home = lazy(() => import('../pages/Home/Home'));
-const CharacterDetails = lazy(() => import('../pages/CharacterDetails/CharacterDetails'));
+const CharacterDetails = lazy(() => import('pages/Details/Details'));
 
 export const App = () => {
   return (  
