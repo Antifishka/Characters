@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
 import { Filter } from "components/Filter/Filter";
@@ -10,7 +11,7 @@ import { Title } from "components/Title/Title";
 const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useLocalStorage('filter', []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,13 +33,14 @@ const Home = () => {
 
   const changeFilter = (e) => {
     setFilter(e.currentTarget.value);
+    console.log("filter", e.currentTarget.value)
   };
 
   const sortedCharacters = [...characters].sort((first, second) =>
     first.name.localeCompare(second.name));
 
   const visibleCharacters = useMemo(() => {
-    console.log("Not memoized!");
+    console.log("Now memoized!");
     const normalizedFilter = filter.toLowerCase();
 
     return sortedCharacters.filter(({ name }) =>

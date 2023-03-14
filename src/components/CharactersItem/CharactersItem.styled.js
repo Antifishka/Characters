@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "constants/theme";
 
 export const CharactersCard = styled.li`
     height: 308px;
@@ -13,6 +14,11 @@ export const CharactersCard = styled.li`
     &:focus{
         transform: scale(1.05);
     };
+
+  ${theme.mq.desktop} {
+    flex-basis: calc((100% - 60px) / 4);
+    height: 244px;
+  }  
 `;
 
 export const CharactersImg = styled.img`

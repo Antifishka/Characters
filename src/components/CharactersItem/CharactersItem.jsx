@@ -10,7 +10,7 @@ export const CharactersItem  = ({ id, image, name, species}) => {
     return (
         <CharactersCard>
             <Link to={`/${id}`} state={{from: fromPage}}>
-                <CharactersImg src={image} alt={name} width="312px" height="232px"/>
+                <CharactersImg src={image} alt={name} width="312px" />
                 <CharactersInfo>
                     <CharactersTitle>{name}</CharactersTitle>
                     <CharactersText>{species}</CharactersText>
