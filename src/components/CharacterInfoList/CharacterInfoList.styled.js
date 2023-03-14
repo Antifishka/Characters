@@ -1,15 +1,19 @@
 import styled from "styled-components";
+import { theme } from "constants/theme";
 
 export const CharacterList = styled.ul`
-    margin: 0 16px;
+    margin: 0 16px 32px 16px;
+
+    ${theme.mq.desktop} {
+        width: 413px;
+        margin: 0 auto 32px auto;
+    }
 `;
 
 export const CharacterItem = styled.li`
     padding: 9px 0 12px 0;
 
-    :not(:first-of-type){
-       border-top: ${p => p.theme.borders.normal}; 
-    }
+    border-bottom: ${p => p.theme.borders.normal};
 `;
 
 export const CharacterProp = styled.h4`

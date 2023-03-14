@@ -1,15 +1,17 @@
 import { CharacterList, CharacterItem, CharacterProp, CharacterText } from './CharacterInfoList.styled';
 
-export const CharacterInfoList = ( character ) => {
+export const CharacterInfoList = ({ info }) => {
+    console.log(info, "info");
+    console.log(info[4], 'type')
 
     const characterInfo = [
-        { prop: 'Gender', value: character.gender || "Unknown"},
-        { prop: 'Status', value: character.status || "Unknown"},
-        { prop: 'Specie', value: character.species || "Unknown"},
-        { prop: 'Origin', value: character.origin || "Unknown"},
-        { prop: 'Type', value: character.type || "Unknown"},
+        { prop: 'Gender', value: info[0] || "Unknown"},
+        { prop: 'Status', value: info[1] || "Unknown"},
+        { prop: 'Specie', value: info[2] || "Unknown"},
+        { prop: 'Origin', value: info[3].name || "Unknown"},
+        { prop: 'Type', value: info[4] || "Unknown"},
     ];
-    console.log(characterInfo, "characterInfo")
+    
     return (
         <CharacterList>
             {characterInfo.map(({ prop, value }) => (

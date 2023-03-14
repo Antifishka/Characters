@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import API from "services/api";
 import { Helmet } from 'react-helmet';
 import {  CharacterImg, CharacterName, Title } from "./Details.styled";
@@ -9,8 +9,6 @@ import { CharacterInfoList } from "components/CharacterInfoList/CharacterInfoLis
 const CharacterDetails = () => {
   const { characterId } = useParams();
   const [character, setCharacter] = useState([]);
-//   const { pathname, search } = useLocation();
-//   const fromPage = `${pathname}${search}`;
   
   useEffect(() => {
     getMovieById();
@@ -29,10 +27,11 @@ const CharacterDetails = () => {
 
     if (!character) {
         return null;
-    };
-
-    console.log(character, 'character')
-    return (
+  };
+  
+  const { image, name, gender, status, species, origin, type } = character;
+  
+  return (
         <main>
             <Helmet>
                 <title>Details</title>
@@ -40,12 +39,12 @@ const CharacterDetails = () => {
             
             <BackButton>Go back</BackButton>
 
-            <CharacterImg src={character.image} alt={character.name} width="150"/>
-            <CharacterName>{character.name}</CharacterName>
+            <CharacterImg src={image} alt={name} width="150px" />
+            <CharacterName>{name}</CharacterName>
             <Title>Informations</Title>
-            <CharacterInfoList character={character} />
+      <CharacterInfoList info={[ gender, status, species, origin, type ]} />
         </main>
-    );
+  );
 };
 
 export default CharacterDetails;

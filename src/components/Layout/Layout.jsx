@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Loader } from "components/Loader/Loader";
+import { Toaster } from 'react-hot-toast';
 import { Container, Header } from "./Layout.styled";
 
 export const Layout = () => {
@@ -10,9 +10,11 @@ export const Layout = () => {
         
       </Header>
       
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={null}>
         <Outlet />
       </Suspense> 
+
+      <Toaster position="top-right" reverseOrder={false} />
     </Container>
   );
 };

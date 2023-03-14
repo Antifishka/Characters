@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { theme } from "constants/theme";
 
 export const CharactersCard = styled.li`
-    height: 308px;
-    border-radius: ${p => p.theme.radii.normal};
-    overflow: hidden;
-    box-shadow: ${p => p.theme.shadow};
+  height: 308px;
+  border-radius: ${p => p.theme.radii.normal};
+  overflow: hidden;
+  box-shadow: ${p => p.theme.shadow};
     
-    transform: scale(1);
-    transition: ${p => p.theme.transition};
+  transform: scale(1);
+  transition: ${p => p.theme.transition};
 
-    &:hover,
-    &:focus{
-        transform: scale(1.05);
-    };
+  &:hover,
+  &:focus{
+    transform: scale(1.05);
+  };
 
   ${theme.mq.desktop} {
     flex-basis: calc((100% - 60px) / 4);
@@ -22,9 +22,12 @@ export const CharactersCard = styled.li`
 `;
 
 export const CharactersImg = styled.img`
-  /* width: 100%; */
   height: 232px;
   object-fit: cover;
+
+  ${theme.mq.desktop} {
+    height: 168px;
+  }
 `;
 
 export const CharactersInfo = styled.div`

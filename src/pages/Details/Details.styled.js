@@ -1,11 +1,17 @@
 import styled from "styled-components";
+import { theme } from "constants/theme";
 
 export const CharacterImg = styled.img`
+  box-sizing: content-box;
   border-radius: 50%;
   border: 5px solid #F2F2F7;
   overflow: hidden;
-  width: 150px;
   margin: 0 auto 34px auto;
+
+  ${theme.mq.desktop} {
+    width: 300px;
+    margin-bottom: 16px;
+  } 
 `;
 
 export const CharacterName = styled.h2`
@@ -17,6 +23,12 @@ export const CharacterName = styled.h2`
   text-align: center;
 
   color: ${p => p.theme.colors.mainTextDetails};
+
+  ${theme.mq.desktop} {
+    margin-bottom: 48px;
+
+    font-size: ${p => p.theme.fontSizes.xxl};
+  } 
 `;
 
 export const Title = styled.p`
@@ -28,4 +40,10 @@ export const Title = styled.p`
   letter-spacing: 0.15px;
 
   color: #8E8E93;
+
+  ${theme.mq.desktop} {
+    margin-bottom: 48px;
+    
+    text-align: center;
+  }
 `;

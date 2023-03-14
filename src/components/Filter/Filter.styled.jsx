@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { theme } from "constants/theme";
 
 export const Container = styled.div`
     position: relative;
     margin-bottom: 32px;
     color: ${p => p.theme.colors.placeholder};
+
+    ${theme.mq.desktop} {
+        margin-bottom: 61px;
+    }
 `;
 
 export const FieldFilter = styled.label`
