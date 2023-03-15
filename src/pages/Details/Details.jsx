@@ -25,25 +25,31 @@ const CharacterDetails = () => {
     };
     }, [characterId]);
 
-    if (!character) {
-        return null;
+  if (!character) {
+    return null;
   };
   
   const { image, name, gender, status, species, origin, type } = character;
   
   return (
-        <main>
-            <Helmet>
-                <title>Details</title>
-            </Helmet>
-            
-            <BackButton>Go back</BackButton>
+    <main>
+      <Helmet>
+        <title>Details</title>
+      </Helmet>
+              
+      <BackButton>Go back</BackButton>
 
-            <CharacterImg src={image} alt={name} width="150px" />
-            <CharacterName>{name}</CharacterName>
-            <Title>Informations</Title>
-      <CharacterInfoList info={[ gender, status, species, origin, type ]} />
-        </main>
+      <CharacterImg src={image} alt={name} width="150px" />
+      <CharacterName>{name}</CharacterName>
+      <Title>Informations</Title>
+      <CharacterInfoList
+        gender={gender}
+        status={status}
+        species={species}
+        origin={origin}
+        type={type}
+      />
+    </main>
   );
 };
 
