@@ -2,13 +2,16 @@ import { useState, useEffect, useMemo } from "react";
 import useLocalStorage from "hooks/useLocalStorage";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
+// import toast from 'react-hot-toast';
 import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
+import { Pagination } from "components/Pagination/Pagination";
 import { CharactersList } from "./Home.styled";
 import { CharactersItem } from "components/CharactersItem/CharactersItem";
 import { Title } from "components/Title/Title";
 
 const Home = () => {
+  const [page, setPage] = useState(1);
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useLocalStorage('filter', []);
@@ -19,17 +22,27 @@ const Home = () => {
 
     async function getCharaters() {
       try {
-        const fetchCharacters = await API.fetchCharaters();
-        console.log(fetchCharacters);
-        setCharacters(fetchCharacters);
-
+        const { info, results } = await API.fetchCharaters(page);
+        console.log(results);
+        setCharacters(results);
+        // toast.success(`There are ${fetchCharacters.length} characters`);
+        console.log(info);
+        const { count, pages } = info;
       } catch (error) {
         console.log(error);
       } finally {
         setIsLoading(false);
       };
     };
-  }, []);
+  }, [page]);
+
+  const handlePrevPage = () => {
+    setPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   const changeFilter = (e) => {
     setFilter(e.currentTarget.value);
@@ -47,7 +60,7 @@ const Home = () => {
       name.toLowerCase().includes(normalizedFilter)
     );
   }, [filter, sortedCharacters]);
-
+  
   return (
     <main>
       <Helmet>
@@ -71,6 +84,12 @@ const Home = () => {
           />
         ))}
       </CharactersList>
+
+      <Pagination
+        page={page}
+        // totalPages={pages}
+        onClickPrev={handlePrevPage}
+        onClickNext={handleNextPage} />
     </main>
   );
 };

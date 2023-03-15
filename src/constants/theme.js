@@ -8,7 +8,7 @@ export const theme = {
         mainTextDetails: '#081F32',
         secondaryTextDetails: '#6E798C',
         placeholder: 'rgba(0, 0, 0, 0.5);',
-        background: '#e2e5e8',
+        background: '#F2F2F7',
         white: '#fff',
         black: '#000',
     },

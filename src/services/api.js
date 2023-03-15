@@ -1,24 +1,18 @@
 import axios from "axios";
-
 const apiInstance = axios.create({
-    baseURL: 'https://rickandmortyapi.com/api/character',
-    params: {
-        // api_key: 'e09f06c48afcb3ebfd8a25b0b6965d1e',
-        // language: 'en-US',
-        // page: `${page}`,
-    },
-});
+        baseURL: 'https://rickandmortyapi.com/api/character',
+    });
 
-async function fetchCharaters() {
-    const response = await apiInstance.get();
+async function fetchCharaters(page) {
+    const { data } = await apiInstance.get(`/?page=${page}`);
      
-    const charaters = response.data.results;
+    const charaters = data.results;
 
     if (!charaters.length) {
         throw new Error(`Sorry, there are no charaters.`)
     }
 
-    return charaters;
+    return data;
 };
 
 async function fetchCharaterById(id) {
