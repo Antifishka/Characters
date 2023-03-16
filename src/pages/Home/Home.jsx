@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
 import { Pagination } from "components/Pagination/Pagination";
+import { ScrollUpButton } from "components/ScrollUpButton/ScrollUpButton";
 import { CharactersList } from "./Home.styled";
 import { CharactersItem } from "components/CharactersItem/CharactersItem";
 import { Title } from "components/Title/Title";
@@ -90,6 +91,8 @@ const Home = () => {
         // totalPages={pages}
         onClickPrev={handlePrevPage}
         onClickNext={handleNextPage} />
+      
+      <ScrollUpButton />
     </main>
   );
 };

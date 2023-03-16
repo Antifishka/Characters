@@ -39,8 +39,12 @@ export const CharactersTitle = styled.h3`
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.5;
   letter-spacing: 0.15px;
+
+  color: ${p => p.theme.colors.mainText};
 `;
 
 export const CharactersText = styled.p`
   letter-spacing: 0.15px;
+
+  color: ${p => p.theme.colors.secondaryText};
 `;

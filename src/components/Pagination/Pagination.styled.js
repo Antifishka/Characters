@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "constants/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -16,19 +15,21 @@ export const Button = styled.button`
     height: 40px;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
 
     font-size: ${p => p.theme.fontSizes.m};
 
-    color: ${p => p.theme.colors.mainText};
-    background-color: ${p => p.theme.colors.background};
+    &:not(:disabled){
+        color: ${p => p.theme.colors.secondaryText};
+        background-color: ${p => p.theme.colors.background};
 
-    transition: ${p => p.theme.transition};
+        transition: ${p => p.theme.transition};
 
-    &:hover,
-    &:focus{
-        color: ${p => p.theme.colors.white};
-        background-color: ${p => p.theme.colors.accent};
-    };
+        &:hover{
+            color: ${p => p.theme.colors.white};
+            background-color: ${p => p.theme.colors.accent};
+        };
+    };  
 `;
 
 export const Page = styled.span`
@@ -38,8 +39,10 @@ export const Page = styled.span`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    cursor: pointer;
     
     font-size: ${p => p.theme.fontSizes.m};
+
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.accent};
 `;

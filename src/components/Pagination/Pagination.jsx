@@ -1,5 +1,6 @@
 import { Container, Button, Page } from "./Pagination.styled";
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
+import { theme } from "constants/theme";
 
 export const Pagination = ({page, pages, onClickPrev, onClickNext}) => {
 
