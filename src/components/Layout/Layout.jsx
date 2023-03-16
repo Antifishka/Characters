@@ -6,6 +6,7 @@ export const Layout = () => {
   return (
     <Container>
       <header>
+        {/* TODO: Login via GMAIL */}
       </header> 
 
       <Suspense fallback={null}>
