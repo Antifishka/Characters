@@ -3,6 +3,8 @@ import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    height: 100%;
+    
     font-family: ${p => p.theme.fonts.roboto};
     font-size: ${p => p.theme.fontSizes.xs};
     font-weight: ${p => p.theme.fontWeights.normal};

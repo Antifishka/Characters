@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;  
-  gap: 8px;
-  margin-bottom: 32px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;  
+    gap: 8px;
+    margin-bottom: 32px;
 `;
 
 export const Button = styled.button`

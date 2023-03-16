@@ -4,8 +4,10 @@ import { ScrollButton } from "./ScrollUpButton.styled";
 
 export const ScrollUpButton = () => {
     return (
-        <ScrollButton onClick={scrollUp} aria-label="scroll-up">
-        <RxDoubleArrowUp size={21}/>
+        <ScrollButton
+            onClick={scrollUp}
+            aria-label="scroll-up">
+             <RxDoubleArrowUp size={21}/>
         </ScrollButton>
     );
 };

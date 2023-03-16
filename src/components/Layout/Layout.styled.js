@@ -11,7 +11,3 @@ export const Container = styled.div`
     padding: 0 210px;
   }
 `;
-
-export const Header = styled.header`
-  /* padding-top: 92px; */
-`;

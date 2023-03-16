@@ -15,9 +15,9 @@ const CharacterDetails = () => {
 
     async function getMovieById() {
       try {
-        const fetchCharater = await API.fetchCharaterById(Number(characterId));
-        console.log(fetchCharater);
-        setCharacter(fetchCharater);
+        const fetchCharacter = await API.fetchCharaterById(Number(characterId));
+        console.log(fetchCharacter, "character's datails");
+        setCharacter(fetchCharacter);
 
       } catch (error) {
         console.log(error);

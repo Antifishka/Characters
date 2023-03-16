@@ -1,5 +1,5 @@
 import { CharacterList, CharacterItem, CharacterProp, CharacterText } from './CharacterInfoList.styled';
-// import { getInfoById } from 'helpers/getInfoById';
+import PropTypes from 'prop-types';
 
 export const CharacterInfoList = ({ gender, status, species, origin, type }) => {
     const infoCharacter = [
@@ -21,3 +21,13 @@ export const CharacterInfoList = ({ gender, status, species, origin, type }) => 
         </CharacterList>
     )
 };
+
+CharacterInfoList.propTypes = {
+    gender: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    species: PropTypes.string.isRequired,
+    origin: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+    }).isRequired,
+    type: PropTypes.string.isRequired,
+}

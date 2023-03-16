@@ -2,17 +2,17 @@ import { useState, useEffect, useMemo } from "react";
 import useLocalStorage from "hooks/useLocalStorage";
 import API from 'services/api';
 import { Helmet } from 'react-helmet';
-// import toast from 'react-hot-toast';
 import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
 import { Pagination } from "components/Pagination/Pagination";
 import { ScrollUpButton } from "components/ScrollUpButton/ScrollUpButton";
-import { CharactersList } from "./Home.styled";
+import { MainContainer, CharactersList } from "./Home.styled";
 import { CharactersItem } from "components/CharactersItem/CharactersItem";
 import { Title } from "components/Title/Title";
 
 const Home = () => {
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useLocalStorage('filter', []);
@@ -24,11 +24,12 @@ const Home = () => {
     async function getCharaters() {
       try {
         const { info, results } = await API.fetchCharaters(page);
-        console.log(results);
+        console.log(results, "fetch characters");
         setCharacters(results);
-        // toast.success(`There are ${fetchCharacters.length} characters`);
-        console.log(info);
-        const { count, pages } = info;
+      
+        const { pages } = info;
+        console.log(pages, "total pages");
+        setTotalPages(pages);
       } catch (error) {
         console.log(error);
       } finally {
@@ -63,7 +64,7 @@ const Home = () => {
   }, [filter, sortedCharacters]);
   
   return (
-    <main>
+    <MainContainer>
       <Helmet>
         <title>Home</title>
       </Helmet>
@@ -88,12 +89,12 @@ const Home = () => {
 
       <Pagination
         page={page}
-        // totalPages={pages}
+        totalPages={totalPages}
         onClickPrev={handlePrevPage}
         onClickNext={handleNextPage} />
       
       <ScrollUpButton />
-    </main>
+    </MainContainer>
   );
 };
 
