@@ -56,10 +56,10 @@ const Home = () => {
 
   const visibleCharacters = useMemo(() => {
     console.log("Now memoized!");
-    const normalizedFilter = filter.toLowerCase();
+    const normalizedFilter = filter.toString().toLowerCase();
 
     return sortedCharacters.filter(({ name }) =>
-      name.toLowerCase().includes(normalizedFilter)
+      name.toString().toLowerCase().includes(normalizedFilter)
     );
   }, [filter, sortedCharacters]);
   
@@ -71,7 +71,7 @@ const Home = () => {
 
       <Title />
 
-      <Filter filter={filter} onChange={changeFilter} />
+      <Filter onChange={changeFilter} />
 
       {isLoading && <Loader />} 
 

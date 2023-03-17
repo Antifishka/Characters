@@ -3,15 +3,15 @@ import { theme } from "constants/theme";
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-export const Filter = ({filter, onChange}) => {
+export const Filter = ({ onChange }) => {
     return (
         <Container>
             <FieldFilter>
-                <IconForm><FaSearch size={19} color={theme.colors.placeholder} /></IconForm>
+                <IconForm><FaSearch size={19} color={theme.colors.placeholder} />
+                </IconForm>
                 <InputFilter
                     type="text"
                     name="filter"
-                    value={filter}
                     placeholder="Filter by name..."
                     debounceTimeout={500}
                     onChange={onChange}
