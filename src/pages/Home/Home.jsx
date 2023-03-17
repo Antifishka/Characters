@@ -75,22 +75,21 @@ const Home = () => {
 
       {isLoading && <Loader />} 
 
-      <CharactersList>
-        {visibleCharacters.length > 0
-          ? (visibleCharacters.map(({ id, image, name, species }) => (
+      {visibleCharacters.length > 0  
+        ? (<CharactersList>  
+          {visibleCharacters.map(({ id, image, name, species }) => (
             <CharactersItem 
               key={id}
               id={id}
               image={image}
               name={name} 
               species={species}
-            />
-            )))
-          : <Message>
+            />))}
+          </CharactersList>)
+        : <Message>
               Sorry, there are no characters matching your search query. Please try again
-            </Message>
-        }
-      </CharactersList>
+          </Message>  
+      }    
 
       <Pagination
         page={page}

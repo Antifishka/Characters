@@ -22,7 +22,7 @@ export const CharactersList = styled.ul`
 
 export const Message = styled.p`
   margin-top: 64px;
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 
   font-size: ${p => p.theme.fontSizes.l};
   text-align: center;
