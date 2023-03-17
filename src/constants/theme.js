@@ -7,7 +7,7 @@ export const theme = {
         accent: '#09b294',
         mainTextDetails: '#081F32',
         secondaryTextDetails: '#6E798C',
-        placeholder: 'rgba(0, 0, 0, 0.5);',
+        placeholder: 'rgba(0, 0, 0, 0.5)',
         background: '#F2F2F7',
         white: '#fff',
         black: '#000',

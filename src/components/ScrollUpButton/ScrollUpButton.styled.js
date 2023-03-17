@@ -23,12 +23,12 @@ export const ScrollButton = styled.button`
         background-color: ${p => p.theme.colors.background};
         transform: translateY(-3px);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 5px 10px #09b294;
+        box-shadow: 0 5px 10px rgba(9,178,148, 0.8);
     };
 
     &:active {
         transform: translateY(-1px);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 5px 10px #09b294;
+        box-shadow: 0 5px 10px rgba(9,178,148, 0.8);
     }
 `;
