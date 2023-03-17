@@ -86,9 +86,9 @@ const Home = () => {
               species={species}
             />))}
           </CharactersList>)
-        : <Message>
+        : (<Message>
               Sorry, there are no characters matching your search query. Please try again
-          </Message>  
+          </Message>)  
       }    
 
       <Pagination

@@ -23,11 +23,11 @@ export const CharacterInfoList = ({ gender, status, species, origin, type }) => 
 };
 
 CharacterInfoList.propTypes = {
-    gender: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    species: PropTypes.string.isRequired,
+    gender: PropTypes.string,
+    status: PropTypes.string,
+    species: PropTypes.string,
     origin: PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        name: PropTypes.string,
     }).isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
 }
