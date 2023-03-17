@@ -19,3 +19,13 @@ export const CharactersList = styled.ul`
     gap: 24px 20px;
   }
 `;
+
+export const Message = styled.p`
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  font-size: ${p => p.theme.fontSizes.l};
+  text-align: center;
+
+  color: ${p => p.theme.colors.accent};
+`;

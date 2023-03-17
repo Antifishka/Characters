@@ -6,7 +6,7 @@ import { Filter } from "components/Filter/Filter";
 import { Loader } from "components/Loader/Loader";
 import { Pagination } from "components/Pagination/Pagination";
 import { ScrollUpButton } from "components/ScrollUpButton/ScrollUpButton";
-import { MainContainer, CharactersList } from "./Home.styled";
+import { MainContainer, CharactersList, Message } from "./Home.styled";
 import { CharactersItem } from "components/CharactersItem/CharactersItem";
 import { Title } from "components/Title/Title";
 
@@ -47,8 +47,8 @@ const Home = () => {
   };
 
   const changeFilter = (e) => {
-    setFilter(e.currentTarget.value);
-    console.log("filter", e.currentTarget.value)
+    setFilter(e.target.value);
+    console.log("filter", e.target.value)
   };
 
   const sortedCharacters = [...characters].sort((first, second) =>
@@ -76,15 +76,20 @@ const Home = () => {
       {isLoading && <Loader />} 
 
       <CharactersList>
-        {visibleCharacters.map(({ id, image, name, species }) => (
-          <CharactersItem 
-            key={id}
-            id={id}
-            image={image}
-            name={name} 
-            species={species}
-          />
-        ))}
+        {visibleCharacters.length > 0
+          ? (visibleCharacters.map(({ id, image, name, species }) => (
+            <CharactersItem 
+              key={id}
+              id={id}
+              image={image}
+              name={name} 
+              species={species}
+            />
+            )))
+          : <Message>
+              Sorry, there are no characters matching your search query. Please try again
+            </Message>
+        }
       </CharactersList>
 
       <Pagination

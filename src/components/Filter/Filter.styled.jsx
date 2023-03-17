@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DebounceInput } from 'react-debounce-input';
 import { theme } from "constants/theme";
 
 export const Container = styled.div`
@@ -13,23 +14,30 @@ export const Container = styled.div`
 
 export const FieldFilter = styled.label`
     width: 100%;
+    
 `;
 
-export const InputFilter = styled.input`
+export const InputFilter = styled(DebounceInput)`
     padding: 16px 16px 16px 48px;
     width: 100%;
     font: inherit;
     border: ${p => p.theme.borders.input};
     border-radius: ${p => p.theme.radii.filter};
-    outline: none;
+    outline: transparent;
     font-size: ${p => p.theme.fontSizes.s};
     
     color: ${p => p.theme.colors.mainText};
     background-color: inherit;
+
+    transition: ${p => p.theme.transition};
     
     ::placeholder {
         font-size: ${p => p.theme.fontSizes.s};
         color: ${p => p.theme.colors.placeholder};
+    }
+
+    &:focus {
+        border-color: ${p => p.theme.colors.accent};
     }
 `;
 
